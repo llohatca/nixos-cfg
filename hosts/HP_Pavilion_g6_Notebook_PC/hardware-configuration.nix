@@ -2,17 +2,20 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d325cce8-1b34-4171-b064-d7c63b3e78f8";
+    {
+      device = "/dev/sda2";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0847-46FC";
+    {
+      device = "/dev/sda1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
