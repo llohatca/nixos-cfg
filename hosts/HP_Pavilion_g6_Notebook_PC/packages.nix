@@ -6,27 +6,25 @@
   };
 
   environment.systemPackages = with pkgs; [
-     neovim
-     fastfetch
-     wget
-     wl-clipboard
-     wl-clipboard-x11
-     wofi
-     btop
-     firefox
-     vesktop
-     alacritty
-     pavucontrol
-     gvfs
-     nemo
-     nemo-fileroller
-     libusbp
-     fuse
-     git
-     qbittorrent
-     xdg-desktop-portal-gtk
+    neovim
+    fastfetch
+    wget
+    wl-clipboard
+    wl-clipboard-x11
+    wofi
+    btop
+    firefox
+    vesktop
+    alacritty
+    pavucontrol
+    gvfs
+    nemo
+    nemo-fileroller
+    git
+    qbittorrent
+    xdg-desktop-portal-gtk
 
-     gcc
+    gcc
     llvmPackages.clang
     llvmPackages.clang-tools
     python312
@@ -47,13 +45,13 @@
     nixpkgs-fmt
   ];
 
-    #Hyprland
+  #Hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-    #Pipewire
+  #Pipewire
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -62,12 +60,12 @@
     pulse.enable = true;
   };
 
-    #Zram
+  #Zram
   zramSwap.enable = true;
   zramSwap.priority = 32767;
   zramSwap.swapDevices = 2;
 
-    #Fonts
+  #Fonts
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
