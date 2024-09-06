@@ -17,8 +17,10 @@
     vesktop
     alacritty
     pavucontrol
+    ripgrep
     gvfs
     nemo
+    p7zip
     nemo-fileroller
     git
     qbittorrent

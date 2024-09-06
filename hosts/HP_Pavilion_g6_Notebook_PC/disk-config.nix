@@ -6,7 +6,7 @@
         type = "disk";
         content = {
           type = "table";
-          format = "mbr";
+          format = "gpt";
           partitions = [
             {
               name = "ESP";
