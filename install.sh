@@ -10,17 +10,18 @@
 
 
 install_nixos() {
-  sudo nix-collect-garbage -d
+  # sudo nix-collect-garbage -d
 
-  sudo mkfs.fat -F 32 /dev/sda1 && echo "ok (fat 32)" || echo "Error (fat 32)"; exit
-  sudo mkfs.ext4 /dev/sda2 && echo "ok (ext4)" || echo "Error (ext4)"; exit
-  sudo mount /dev/sda2 /mnt && echo "ok (mount /mnt)" || echo "Error (mount /mnt)"; exit
-  sudo mkdir /mnt/boot && echo "ok (mkdir /mnt/boot)" || echo "Error (mkdir /mnt/boot)"; exit
-  sudo mount /dev/sda1 /mnt/boot && echo "ok (mount /mnt/boot)" || echo "Error (mount /mnt/boot)"; exit
+  # sudo mkfs.ext4 /dev/sda2
 
-  sudo nixos-install --flake ./flake.nix#hp && echo "Installing (hp)" || echo "Error installing (hp)"; exit
-  sudo umount -R /mnt && echo "ok (umount)" || echo "Error (umount)"; exit
-  sudo reboot && echo "ok (reboot)" || echo "Error (reboot)"; exit
+
+  # sudo mkfs.fat -F 32 /dev/sda1
+  # sudo mount /dev/sda2 /mnt
+  # sudo mkdir /mnt/boot
+  # sudo mount /dev/sda1 /mnt/boot
+
+  # sudo nixos-install --flake ./flake.nix#hp
+  # sudo umount -R /mnt
 }
   echo '   _  ___      ____  ____  ____         __       ____       
   / |/ (_)_ __/ __ \/ __/ /  _/__  ___ / /____ _/ / /__ ____

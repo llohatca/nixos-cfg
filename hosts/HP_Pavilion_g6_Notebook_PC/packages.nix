@@ -7,51 +7,17 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    vesktop
     fastfetch
     wget
-    wl-clipboard
-    wl-clipboard-x11
-    wofi
-    btop
-    firefox
-    vesktop
-    alacritty
-    pavucontrol
-    ripgrep
     gvfs
     nemo
-    p7zip
     nemo-fileroller
     git
-    qbittorrent
-    xdg-desktop-portal-gtk
+    home-manager
+    dconf
 
-    gcc
-    llvmPackages.clang
-    llvmPackages.clang-tools
-    python312
-    python312Packages.pip
-    nodejs_22
-    cargo
-    rustc
-
-
-    # Re:Nvim #
-    lua-language-server
-    rust-analyzer
-    bash-language-server
-    marksman
-    hyprls
-
-    stylua
-    nixpkgs-fmt
   ];
-
-  #Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   #Pipewire
   security.rtkit.enable = true;
