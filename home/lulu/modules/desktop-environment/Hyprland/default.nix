@@ -3,7 +3,7 @@ let
   terminal = "alacritty";
   fileManager = "nemo";
   menu = "wofi --show drun";
-  # vibrance = "hyprshade on ~/.config/hyprshade/shaders/vibrance.glsl";
+  # vibrance = "hyprshade on ~/.config/hyprshade/shaders/blue-light-filter.glsl";
 in 
 {
   # imports = [
@@ -58,6 +58,10 @@ in
     settings = {
       monitor = "LVDS-1, 1366x768@59, 0x0, 1";
 
+      exec = [
+        "hyprshade on ~/.config/hyprshade/shaders/blue-light-filter.glsl"
+      ];
+
       input = {
         kb_layout = "us,ru";
         # kb_model = "pc105+inet";
@@ -86,23 +90,16 @@ in
       };
 
       general = {
-
         gaps_in = 5;
         gaps_out = 10;
-
         border_size = 2;
-        # col.active_border = rgba(f5c2e7ee) rgba(cba6f7ee) 45deg;
-        # col.active_border = "rgba(cba6f7ee)";
-        # col.inactive_border = "rgba(595959aa)";
-
-        allow_tearing = true;
-
-        layout = "dwindle";
+        "col.active_border" = "rgba(cba6f7ee)";
+        "col.inactive_border" = "rgb(61565c)";
       };
 
       decoration = {
-        rounding = 15;
-    
+        rounding = 8;
+
         blur = {
           enabled = true;
           size = 6;
@@ -116,17 +113,15 @@ in
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
-        # col.shadow = "rgba(1a1a1aee)";
+
+        "col.shadow" = "rgba(1a1a1aee)";
         dim_inactive = false;
       };
 
       animations = {
         enabled = true;
         first_launch_animation = true;
-
-
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-
         animation = [
           "windows, 1, 7, myBezier"
           "windowsOut, 1, 7, default, popin 80%"
@@ -168,8 +163,15 @@ in
           "0,monitor:LVDS-1"
         ];
 
-      "$mod" = "SUPER";
+      #  windowrulev2 = [
+      #   #Fix sharing video
+      #   "workspace [w], class:^(hyprland-share-picker)$, title:^(MainPicker)$"
+      #   "float, class:^(hyprland-share-picker)$, title:^(MainPicker)$"
+      #   "size 500 290, class:^(hyprland-share-picker)$, title:^(MainPicker)$"
+      #  ];
 
+
+      "$mod" = "SUPER";
       bind = [
         "$mod, R, exec, ${terminal}"
         "$mod, Q, killactive,"
@@ -179,10 +181,8 @@ in
         "$mod, D, fullscreen,"
         "$mod, A, exec, ${menu}"
         "$mod, P, pseudo,"
-
         ", Print, exec, grimblast --notify --freeze copysave output"
         "Ctrl, Print,  exec, grimblast --notify --freeze copysave area"
-        
 
         "$mod, L, movefocus, r"
         "$mod, H, movefocus, l"

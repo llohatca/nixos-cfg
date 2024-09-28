@@ -20,6 +20,7 @@ outputs = {nixpkgs, home-manager, ...}@inputs:
             ./hosts/HP_Pavilion_g6_Notebook_PC
             home-manager.nixosModules.home-manager {
               home-manager = {
+                backupFileExtension = "backup";
                 useUserPackages = true;
                 users.lulu = import ./home/lulu;
                 extraSpecialArgs = { inherit inputs; };

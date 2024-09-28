@@ -14,6 +14,7 @@
     #############
     # cli tools #
     #############
+    # zerotierone
 
     ## system control ##
 
@@ -52,6 +53,7 @@
     alacritty
     wofi
     grimblast
+    qbittorrent
 
     ################
     # settings app #
@@ -69,6 +71,7 @@
     transmission_4-gtk
     qpwgraph
     file-roller
+    hyprpicker
 
     #############
     # dev tools #

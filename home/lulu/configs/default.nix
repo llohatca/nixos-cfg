@@ -1,5 +1,8 @@
 {
   imports = [
+    # ./wofi
+    ./alacritty
+    ./bash
     ./git
     ./nemo
     ./dconf

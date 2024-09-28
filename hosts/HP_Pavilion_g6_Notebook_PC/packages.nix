@@ -16,6 +16,8 @@
     git
     home-manager
     dconf
+    clang-tools
+    clang
 
   ];
 
