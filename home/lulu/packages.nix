@@ -53,6 +53,7 @@
     alacritty
     wofi
     grimblast
+    swww
     qbittorrent
 
     ################

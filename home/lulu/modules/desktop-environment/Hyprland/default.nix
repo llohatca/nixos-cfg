@@ -25,7 +25,6 @@ in
   };
 
   home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
@@ -44,7 +43,7 @@ in
     QT_AUTO_SCREEN_SCALE_FACTOR = "1 ";
     QT_QPA_PLATFORM = "wayland;xcb ";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1 ";
-    QT_QPA_PLATFORMTHEME = "gtk3";
+    QT_QPA_PLATFORMTHEME = "gtk";
 
     XCURSOR_SIZE = "24";
     HYPRCURSOR_SIZE = "24";
@@ -57,6 +56,12 @@ in
     systemd.enable = true;
     settings = {
       monitor = "LVDS-1, 1366x768@59, 0x0, 1";
+
+      exec-once = [
+        # "hyprctl setcursor Bibata-Modern-Ice 27"
+        "swww-daemon"
+        "swww img ~/nixos-cfg/home/lulu/Pictures/Wallpapers/1.jpg"
+      ];
 
       exec = [
         "hyprshade on ~/.config/hyprshade/shaders/blue-light-filter.glsl"

@@ -1,5 +1,13 @@
 { pkgs, ... }:
 {
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 27;
+  };
+
   gtk = {
     enable = true;
     theme = {
@@ -16,11 +24,14 @@
         colorVariants = [ "dracula" ];
       };
     };
+
+
     gtk2.extraConfig =
       ''
         gtk-font-name="Comfortaa 10"
-        gtk-cursor-theme-name="Bibata-Modern-Classic"
-        gtk-cursor-theme-size=24
+        gtk-cursor-theme-name="Bibata-Modern-Ice"
+        gtk-cursor-theme-size=27
+
         gtk-toolbar-style=GTK_TOOLBAR_ICONS
         gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
         gtk-button-images=0
@@ -32,11 +43,13 @@
         gtk-xft-hintstyle="hintslight"
         gtk-xft-rgba="rgb"
       '';
+
     gtk3.extraConfig = {
       Settings = ''
         gtk-font-name=Comfortaa 10
-        gtk-cursor-theme-name=Bibata-Modern-Classic
-        gtk-cursor-theme-size=24
+        gtk-cursor-theme-name=Bibata-Modern-Ice
+        gtk-cursor-theme-size=27
+
         gtk-toolbar-style=GTK_TOOLBAR_ICONS
         gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
         gtk-button-images=0
@@ -54,8 +67,9 @@
     gtk4.extraConfig = {
       Settings = ''
         gtk-font-name=Comfortaa 10
-        gtk-cursor-theme-name=Bibata-Modern-Classic
-        gtk-cursor-theme-size=24
+        gtk-cursor-theme-name=Bibata-Modern-Ice
+        gtk-cursor-theme-size=27
+
         gtk-toolbar-style=GTK_TOOLBAR_ICONS
         gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
         gtk-button-images=0

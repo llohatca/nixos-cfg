@@ -1,6 +1,5 @@
 {
   imports = [
-    # ./wofi
     ./alacritty
     ./bash
     ./git
