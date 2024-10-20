@@ -1,13 +1,18 @@
+{pkgs, ...}:
 {
-  services.gvfs.enable = true;
 
-  #openssh
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-    };
+   services = {
+     gvfs.enable = true;
+
+     openssh = {
+       enable = true;
+       settings = {
+         PasswordAuthentication = false;
+         KbdInteractiveAuthentication = false;
+       };
+     };
+     flatpak.enable = true;
   };
 
 }
+

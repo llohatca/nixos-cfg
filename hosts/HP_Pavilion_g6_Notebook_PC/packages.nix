@@ -5,6 +5,11 @@
     allowUnfreePerdicate = (_: true);
   };
 
+  programs.nh = {
+    enable = true;
+    flake = "/home/lulu/nixos-cfg/";
+  };
+
   environment.systemPackages = with pkgs; [
     neovim
     vesktop
@@ -18,6 +23,7 @@
     dconf
     clang-tools
     clang
+
 
   ];
 

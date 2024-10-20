@@ -11,13 +11,17 @@
   };
 
   home.packages = with pkgs; [
+    #for Games
+
+
+
     #############
     # cli tools #
     #############
     # zerotierone
 
     ## system control ##
-
+    htop
     btop
     powertop
     wl-clipboard
@@ -55,6 +59,10 @@
     grimblast
     swww
     qbittorrent
+    smassh
+
+    flatpak
+    gnome-software
 
     ################
     # settings app #
@@ -66,13 +74,19 @@
     # usage pkgs #
     ##############
     firefox
-    # vesktop
-    inputs.ayugram-desktop.packages.${pkgs.system}.default
+    # inputs.ayugram-desktop.packages.${pkgs.system}.default
+
+    #for nekoray
     nekoray
+    polkit_gnome
+
     transmission_4-gtk
     qpwgraph
     file-roller
     hyprpicker
+
+    parsec-bin
+
 
     #############
     # dev tools #
@@ -81,4 +95,6 @@
     python312Packages.pip
     nodejs_22
   ];
+
+
 }

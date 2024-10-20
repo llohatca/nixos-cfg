@@ -2,15 +2,17 @@
 
 inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
+    ags.url = "github:Aylur/ags";
+    
 };
 
-outputs = {nixpkgs, home-manager, ...}@inputs:
+outputs = { self, nixpkgs, home-manager, ayugram-desktop,...}@inputs:
   let 
     system = "x86_64-linux";
   in {

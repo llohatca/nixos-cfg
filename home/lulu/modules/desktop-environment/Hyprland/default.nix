@@ -2,7 +2,7 @@
 let
   terminal = "alacritty";
   fileManager = "nemo";
-  menu = "wofi --show drun";
+  menu = "ags -t applauncher";
   # vibrance = "hyprshade on ~/.config/hyprshade/shaders/blue-light-filter.glsl";
 in 
 {
@@ -45,8 +45,8 @@ in
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1 ";
     QT_QPA_PLATFORMTHEME = "gtk";
 
-    XCURSOR_SIZE = "24";
-    HYPRCURSOR_SIZE = "24";
+    XCURSOR_SIZE = "27";
+    HYPRCURSOR_SIZE = "27";
   };
 
 
@@ -64,7 +64,10 @@ in
       ];
 
       exec = [
+        "ags"
         "hyprshade on ~/.config/hyprshade/shaders/blue-light-filter.glsl"
+        #for nekoray
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       ];
 
       input = {
@@ -90,9 +93,9 @@ in
         accel_profile = "flat";
       };
 
-      cursor = {
-        no_hardware_cursors = true;
-      };
+      # cursor = {
+      #   no_hardware_cursors = true;
+      # };
 
       general = {
         gaps_in = 5;
